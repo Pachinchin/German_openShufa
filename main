@@ -1,7 +1,7 @@
 library(cluster)    # clustering algorithms
 library(factoextra) # clustering visualization
-library(dendextend) #
-library(dplyr)
+library(dendextend) # dendogram library
+library(dplyr)      # dataframe manupulation library
 
 #import the data 
 Data <- read.csv("german_credit_data.csv", sep=",", header=TRUE)
@@ -14,14 +14,14 @@ colnames(Data)
 summary (Data)
 
 
-#remove the unwanted colums
+#remove the unwanted columns,then view
 credit<-Data[-1]
 creditC<-credit[c(1,7,8)]
 creditC
 
 
 
-#Check misisng values 
+#Check misisng values then visualize 
 a<-apply(is.na(creditC),2,sum)
 a
 
